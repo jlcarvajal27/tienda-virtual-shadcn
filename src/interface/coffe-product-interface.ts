@@ -4,7 +4,7 @@ export interface CoffeeProduct {
   image: string;
   description: string;
   price: number;
-  category: string;
+  categorySlug: string;
   origin: string;
   taste: string;
 }

@@ -53,13 +53,13 @@ const FeaturedProduct = () => {
                           <IconButton
                             onClick={() => router.push("/")}
                             icon={<Expand size={20} />}
-                            className="text-gray-600"
+                            className="text-gray-600 cursor-pointer"
                           />
 
                           <IconButton
                             onClick={() => router.push("/")}
                             icon={<ShoppingCart size={20} />}
-                            className="text-gray-600"
+                            className="text-gray-600 cursor-pointer"
                           />
                         </div>
                       </div>
