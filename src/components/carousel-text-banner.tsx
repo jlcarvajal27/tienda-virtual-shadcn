@@ -1,13 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import {
-  Carousel,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  CarouselContent,
-} from "./ui/carousel";
+import { Carousel, CarouselItem, CarouselContent } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -77,8 +71,6 @@ const CarouselTextBanner = () => {
               ))}
             </CarouselContent>
           </div>
-
-          <div className="absolute -bottom-4 left-0 right-0 flex justify-center gap-1 py-2"></div>
         </Carousel>
       </div>
     </div>

@@ -1,7 +1,9 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { coffeeProducts } from "@/data/coffe-products";
+import IconButton from "@/components/icon-button";
+import { Expand, ShoppingCart } from "lucide-react";
 
 export default function page() {
   const params = useParams();
@@ -10,6 +12,8 @@ export default function page() {
   const filteredProducts = coffeeProducts.filter(
     (product) => product.categorySlug === slug
   );
+
+  const router = useRouter();
 
   return (
     <div className="max-w-6xl mx-auto py-10 px-4">
@@ -22,11 +26,27 @@ export default function page() {
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-6">
           {filteredProducts.map((product) => (
             <div key={product.id} className="dark:bg-dark rounded shadow p-4">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-48 object-cover rounded"
-              />
+              <div>
+                <img
+                  src={product.images[0]}
+                  alt={product.title}
+                  className="w-full h-48 object-cover rounded"
+                />
+                <div className="flex justify-center gap-x-6">
+                  <IconButton
+                    onClick={() => router.push(`/product/${product.slug}`)}
+                    icon={<Expand size={20} />}
+                    className="text-gray-600 cursor-pointer"
+                  />
+
+                  <IconButton
+                    onClick={() => router.push("/cart")}
+                    icon={<ShoppingCart size={20} />}
+                    className="text-gray-600 cursor-pointer"
+                  />
+                </div>
+              </div>
+
               <h2 className="text-xl font-semibold mt-2">{product.title}</h2>
               <p className="text-sm text-gray-500">
                 {product.origin} – {product.taste}

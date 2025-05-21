@@ -1,7 +1,8 @@
 export interface CoffeeProduct {
   id: number;
   title: string;
-  image: string;
+  slug: string;
+  images: string[];
   description: string;
   price: number;
   categorySlug: string;
