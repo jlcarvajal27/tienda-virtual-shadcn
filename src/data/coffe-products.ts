@@ -118,7 +118,7 @@ export const coffeeProducts: CoffeeProduct[] = [
       "Café molido orgánico con notas florales y cítricas, cultivado sin pesticidas.",
     price: 4.1,
     categorySlug: "molido",
-    origin: "Costa Rica",
+    origin: "Nicaragua",
     taste: "cítrico",
   },
   {

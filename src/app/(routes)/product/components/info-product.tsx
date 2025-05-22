@@ -1,14 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/hooks/use-cart";
 import { CoffeeProduct } from "@/interface/coffe-product-interface";
-import { Heart, ShoppingCartIcon } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export type InfoProductProps = {
   product: CoffeeProduct;
 };
 
 const InfoProduct = ({ product }: InfoProductProps) => {
+  const { addItem, items } = useCart();
+
+  console.log(items);
   return (
     <div className="px-6">
       <div className="justify-between mb-3 sm:flex">
@@ -29,7 +33,7 @@ const InfoProduct = ({ product }: InfoProductProps) => {
       <div className="flex items-center  gap-3  overflow-visible-important">
         <Button
           className=" w-62 cursor-pointer"
-          onClick={() => console.log("comprar")}
+          onClick={() => addItem(product)}
         >
           Comprar
         </Button>

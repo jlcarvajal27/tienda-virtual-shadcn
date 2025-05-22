@@ -15,12 +15,15 @@ import { Card, CardContent } from "./ui/card";
 import { Expand, ShoppingCart } from "lucide-react";
 import IconButton from "./icon-button";
 import { useRouter } from "next/navigation";
+import { useCart } from "@/hooks/use-cart";
 
 const FeaturedProduct = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<CoffeeProduct[]>([]);
 
   const router = useRouter();
+
+  const { addItem } = useCart();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -59,7 +62,7 @@ const FeaturedProduct = () => {
                           />
 
                           <IconButton
-                            onClick={() => router.push("/")}
+                            onClick={() => addItem(product)}
                             icon={<ShoppingCart size={20} />}
                             className="text-gray-600 cursor-pointer"
                           />

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>
