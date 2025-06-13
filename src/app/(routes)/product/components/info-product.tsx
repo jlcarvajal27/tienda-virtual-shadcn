@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/use-cart";
+import { useLovedProducts } from "@/hooks/use-loved-products";
 import { CoffeeProduct } from "@/interface/coffe-product-interface";
 import { Heart } from "lucide-react";
 
@@ -11,6 +12,8 @@ export type InfoProductProps = {
 
 const InfoProduct = ({ product }: InfoProductProps) => {
   const { addItem, items } = useCart();
+
+  const { addLovedItem } = useLovedProducts();
 
   console.log(items);
   return (
@@ -41,7 +44,7 @@ const InfoProduct = ({ product }: InfoProductProps) => {
           size={30}
           strokeWidth={1}
           className="transition duration-300 cursor-pointer hover:fill-red-500"
-          onClick={() => console.log("añadir fav")}
+          onClick={() => addLovedItem(product)}
         />
       </div>
     </div>

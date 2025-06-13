@@ -16,6 +16,7 @@ import { Expand, ShoppingCart } from "lucide-react";
 import IconButton from "./icon-button";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/hooks/use-cart";
+import Autoplay from "embla-carousel-autoplay";
 
 const FeaturedProduct = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +38,7 @@ const FeaturedProduct = () => {
   return (
     <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
       <h3 className="px-6 text-3xl sm:pb-8"> Productos destacados </h3>
-      <Carousel>
+      <Carousel plugins={[Autoplay({ delay: 3000 })]}>
         <CarouselContent className="ml-2 md:ml-4">
           {isLoading ? (
             <SkeletonSchema grid={3} />
@@ -52,18 +53,18 @@ const FeaturedProduct = () => {
                     <CardContent className="relative flex items-center justify-center px-6 py-2">
                       <img src={product.images[0]} alt={product.title} />
                       <div className="absolute w-full px-6 transition duration-200 opacity-0 group hover:opacity-100 bottom-5">
-                        <div className="flex justify-center gap-x-6">
+                        <div className="flex flex-col items-end gap-y-5 mx-2">
                           <IconButton
                             onClick={() =>
                               router.push(`/product/${product.slug}`)
                             }
-                            icon={<Expand size={20} />}
+                            icon={<Expand size={15} />}
                             className="text-gray-600 cursor-pointer"
                           />
 
                           <IconButton
                             onClick={() => addItem(product)}
-                            icon={<ShoppingCart size={20} />}
+                            icon={<ShoppingCart size={15} />}
                             className="text-gray-600 cursor-pointer"
                           />
                         </div>

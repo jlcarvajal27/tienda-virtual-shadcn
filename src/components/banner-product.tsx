@@ -5,7 +5,7 @@ const BannerProduct = () => {
   return (
     <>
       <div className="mt-4 text-center">
-        <p>Sumergete en una experiencia unica</p>
+        <p>Sumérgete en una experiencia unica</p>
         <h4 className="mt-2 text-5xl font-extrabold">CafeExquisito</h4>
         <p className="my-2 text-lg ">Despierta tus sentidos con cada sorbo</p>
         <Link href="#" className={buttonVariants()}>
