@@ -7,6 +7,7 @@ import ItemsMenuMobile from "./Items-menu-mobile";
 import ToggleTheme from "./toggle-theme";
 import { useCart } from "@/hooks/use-cart";
 import { useLovedProducts } from "@/hooks/use-loved-products";
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
   const router = useRouter();
@@ -47,11 +48,12 @@ const Navbar = () => {
           onClick={() => router.push("/loved-products")}
         />
 
-        <User
+        {/* <User
           strokeWidth="1"
           className="cursor-pointer"
           onClick={() => router.push("/user")}
-        />
+        /> */}
+        <UserButton />
         <ToggleTheme />
       </div>
     </div>
