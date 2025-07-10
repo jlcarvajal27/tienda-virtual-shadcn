@@ -47,12 +47,6 @@ const Navbar = () => {
           }`}
           onClick={() => router.push("/loved-products")}
         />
-
-        {/* <User
-          strokeWidth="1"
-          className="cursor-pointer"
-          onClick={() => router.push("/user")}
-        /> */}
         <UserButton />
         <ToggleTheme />
       </div>
